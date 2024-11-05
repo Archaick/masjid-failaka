@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className="drawer">
               <Anchor href="#about-us" onClick={close}>About Us</Anchor>
               <Anchor href="#support" onClick={close}>Support</Anchor>
-              <Anchor href="#calendar" onClick={close}>Calendar</Anchor>
+              <Anchor href="#prayers" onClick={close}>Prayers</Anchor>
             </div>
           </Drawer>
         </>
@@ -51,7 +51,7 @@ const Navbar = () => {
         <Group spacing="lg" gap="xl">
           <Anchor href="#about-us" size="md">About Us</Anchor>
           <Anchor href="#support" size="md">Support</Anchor>
-          <Anchor href="#calendar" size="md">Calendar</Anchor>
+          <Anchor href="#prayers" size="md">Prayers</Anchor>
         </Group>
       )}
     </div>
