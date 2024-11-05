@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <MantineProvider>
+    <MantineProvider >
         <div>
           <Navbar />
         </div>
