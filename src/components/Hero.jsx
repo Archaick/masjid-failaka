@@ -14,8 +14,8 @@ const Hero = () => {
           <img className="d-block w-100" src={FirstSlide} alt="First Slide" />
           <div className="overlay"></div>
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Investing in the Next Generation</h3>
+            <p>Support our efforts to nurture young minds in faith and knowledge</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -23,8 +23,8 @@ const Hero = () => {
           <img className="d-block w-100" src={SecondSlide} alt="Second Slide" />
           <div className="overlay"></div>
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Guidance for Our Community</h3>
+            <p>Your donations help us continue to be a center for spiritual growth and wisdom</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -32,8 +32,8 @@ const Hero = () => {
           <img className="d-block w-100" src={ThirdSlide} alt="Third Slide" />
           <div className="overlay"></div>
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>A Legacy of Giving</h3>
+            <p>Contribute to the future of our mosque and community</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

@@ -9,7 +9,6 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      {/* Website Title */}
       <Text component="h1" size="xl" weight={700} color="white">
         Masjid Failaka
       </Text>
@@ -48,7 +47,7 @@ const Navbar = () => {
           </Drawer>
         </>
       ) : (
-        <Group spacing="lg" gap="xl">
+        <Group spacing="lg" gap="xl" className="nav-links">
           <Anchor href="#about-us" size="md">About Us</Anchor>
           <Anchor href="#support" size="md">Support</Anchor>
           <Anchor href="#prayers" size="md">Prayers</Anchor>

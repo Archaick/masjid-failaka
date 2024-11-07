@@ -6,6 +6,7 @@
   background-color: #1a1a2e; /* Dark navy background */
   color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0 20px; /* Padding on left and right */
 }
 
 /* Website Title */
@@ -13,9 +14,21 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #f8f8f8;
+  margin-left: 5%;
+  flex-grow: 1; /* Allow title to take up available space */
 }
 
 /* Link Styling for Group */
+.navbar .mantine-Group-root {
+  display: flex;
+  gap: 15px; /* Add space between links */
+  align-items: center;
+}
+
+.nav-links {
+  margin-right: 5%;
+}
+
 .navbar .mantine-Group-root a {
   color: #f0f0f0;
   font-size: 1rem;
@@ -38,6 +51,7 @@
   flex-direction: column;
   gap: 15px;
   align-items: start;
+  padding: 20px; /* Add padding to the drawer for spacing */
 }
 
 /* Drawer Title Styling */
