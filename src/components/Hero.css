@@ -1,0 +1,43 @@
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    object-position: center; /* Centers the image horizontally and vertically */
+    height: 80vh; /* Matches the container height */
+    width: 100%; /* Ensures full width */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.5); /* Semi-transparent overlay matching #1a1a2e */
+    z-index: 1;
+  }
+  
+  .carousel-caption {
+    z-index: 2; /* Ensure caption appears above overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Centers the text vertically */
+  }
+  
+  .carousel-caption h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  

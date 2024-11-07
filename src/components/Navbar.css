@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
   background-color: #1a1a2e; /* Dark navy background */
   color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -14,7 +13,6 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #f8f8f8;
-  margin: 0;
 }
 
 /* Link Styling for Group */
