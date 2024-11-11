@@ -6,35 +6,38 @@
 }
 
 .marquee-container h2 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .marquee-container .prayer-item {
-  display: inline-block;
   margin: 0 10px;
   overflow: hidden; /* Hide overflow to prevent scrollbars */
   font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
 }
 
 .color-pulse-indicator {
-    color: #1a1a2e;
-    font-weight: bold;
+  color: #1a1a2e;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 6px;
+  animation: colorPulse 3s infinite;
+}
+.color-pulse-indicator::before {
+  content: "🕌";
+}
+@keyframes colorPulse {
+  0%,
+  100% {
     background-color: #4ecca3;
-    border-radius: 6px;
-    padding: 3px;
-    animation: colorPulse 3s infinite;
+    color: white;
   }
-  
-  @keyframes colorPulse {
-    0%, 100% {
-      background-color: #4ecca3;
-      color: white;
-    }
-    50% {
-      background-color: #1a1a2e;
-      color: #4ecca3;
-    }
+  50% {
+    background-color: #1a1a2e;
+    color: #4ecca3;
   }
-  
-  
-  
+}
