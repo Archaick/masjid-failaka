@@ -1,9 +1,40 @@
 .marquee-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.marquee-container li {
-    list-style-type: none;
+.marquee-container h2 {
+    font-weight: 700;
 }
+
+.marquee-container .prayer-item {
+  display: inline-block;
+  margin: 0 10px;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  font-size: 1.4rem;
+}
+
+.color-pulse-indicator {
+    color: #1a1a2e;
+    font-weight: bold;
+    background-color: #4ecca3;
+    border-radius: 6px;
+    padding: 3px;
+    animation: colorPulse 3s infinite;
+  }
+  
+  @keyframes colorPulse {
+    0%, 100% {
+      background-color: #4ecca3;
+      color: white;
+    }
+    50% {
+      background-color: #1a1a2e;
+      color: #4ecca3;
+    }
+  }
+  
+  
+  
