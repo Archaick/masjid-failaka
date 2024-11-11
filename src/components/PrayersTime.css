@@ -1,0 +1,9 @@
+.marquee-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marquee-container li {
+    list-style-type: none;
+}
