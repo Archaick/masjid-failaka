@@ -125,7 +125,7 @@ const PrayersTime = () => {
       )}
       <Container mt={50} mb={200}>
         {prayerTimes ? (
-          <Marquee gradient={false} speed={50} className="marquee-list">
+          <Marquee gradient={false} speed={80} className="marquee-list">
             {Object.entries(prayerTimes).map(([prayer, time]) => (
               <span
                 key={prayer}

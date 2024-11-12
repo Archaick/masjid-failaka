@@ -10,34 +10,42 @@
 }
 
 .marquee-container .prayer-item {
-  margin: 0 10px;
+  margin: 0 20px;
   overflow: hidden; /* Hide overflow to prevent scrollbars */
   font-size: 1.4rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 4px;
   text-align: center;
 }
 
 .color-pulse-indicator {
-  color: #1a1a2e;
+  color: white;
+  background-color: #1a1a2e; /* Navy background */
   font-weight: bold;
   border-radius: 6px;
   padding: 6px;
-  animation: colorPulse 3s infinite;
+  position: relative; /* For the ::after pseudo-element */
+  overflow: hidden; /* Hide the shine effect overflow */
 }
-.color-pulse-indicator::before {
-  content: "🕌";
+
+.color-pulse-indicator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start the shine off to the left */
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-30deg);
+  animation: sheen 1.5s infinite;
 }
-@keyframes colorPulse {
-  0%,
-  100% {
-    background-color: #4ecca3;
-    color: white;
+
+@keyframes sheen {
+  0% {
+    transform: skewX(-30deg) translateX(-100%);
   }
-  50% {
-    background-color: #1a1a2e;
-    color: #4ecca3;
+  100% {
+    transform: skewX(-30deg) translateX(100%);
   }
 }
