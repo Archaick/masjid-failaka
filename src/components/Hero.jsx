@@ -23,7 +23,7 @@ const Hero = () => {
           <img className="d-block w-100" src={SecondSlide} alt="Second Slide" />
           <div className="overlay"></div>
           <Carousel.Caption>
-            <h3>Guidance for Our Community</h3>
+            <h3>Guidance for Communities</h3>
             <p>Your donations help us continue to be a center for spiritual growth and wisdom</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -32,7 +32,7 @@ const Hero = () => {
           <img className="d-block w-100" src={ThirdSlide} alt="Third Slide" />
           <div className="overlay"></div>
           <Carousel.Caption>
-            <h3>A Legacy of Giving</h3>
+            <h3>Legacy of Giving</h3>
             <p>contribute to the future of our mosque and community</p>
           </Carousel.Caption>
         </Carousel.Item>

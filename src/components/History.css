@@ -1,0 +1,26 @@
+.history-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 450px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.history-title {
+  margin-bottom: 20px;
+}
+
+.history-tabs {
+  max-width: 800px;
+  width: 100%;
+}
+
+.history-tabs ul {
+  text-align: left;
+}
+
+.tab-content {
+    padding-left: 12px;
+}

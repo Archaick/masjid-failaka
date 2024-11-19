@@ -62,7 +62,7 @@ const PrayersTime = () => {
   const convertToJakartaTime = (time) => {
     const [hour, minute] = time.split(":");
     const jakartaTime = getJakartaNow();
-    jakartaTime.setHours(hour - 1, minute, 0, 0);
+    jakartaTime.setHours(hour, minute, 0, 0);
     return jakartaTime;
   };
 

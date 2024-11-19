@@ -29,8 +29,7 @@ const Navbar = () => {
             padding="lg"
             title="Navigation"
             position="right"
-            overlayOpacity={0.55}
-            overlayBlur={3}
+            overlayOpacity={{ backgroundOpacity: 0.5, blur: 4 }}
             transition="slide-right"
             styles={{
               drawer: { backgroundColor: '#1a1a2e', color: '#ffffff' },
