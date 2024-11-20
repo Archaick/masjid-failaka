@@ -16,7 +16,7 @@
 .image-container {
   position: relative;
   width: 100%;
-  height: 360px; /* Fixed height for all images */
+  height: 320px; /* Fixed height for all images */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -35,7 +35,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(131, 131, 131, 0.2); /* Slightly light background */
+  backdrop-filter: blur(8px); /* Blur effect */
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -11,23 +11,23 @@ import activities from "../assets/gallery/activities.png";
 
 const images = [
   {
-    title: "Exterior of the Masjid",
-    description: "A view of the beautiful Masjid architecture.",
+    title: "Outskirts of our masjid",
+    description: "A boundary between urban life and spiritual peace",
     src: exterior,
   },
   {
     title: "Instructor with Students",
-    description: "An instructor giving a lecture to students in the masjid.",
+    description: "An instructor giving a lecture to students in the masjid",
     src: lecture,
   },
   {
     title: "Orphanage Event",
-    description: "A charity event organized for orphans.",
+    description: "A charity event organized for orphans",
     src: orphanage,
   },
   {
     title: "Children's Event",
-    description: "A fun and educational event for children.",
+    description: "A fun and educational event for children",
     src: activities,
   },
 ];
@@ -35,9 +35,7 @@ const images = [
 const Gallery = () => {
   return (
     <Container>
-      <h2 className="gallery-title">
-        Explore our Masjid
-      </h2>
+      <h2 className="gallery-title">Building Faith, Community, and Memories</h2>
 
       <Row className="g-4">
         {images.map((image, index) => (
