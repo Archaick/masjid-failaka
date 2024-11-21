@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
             <p className="icon-text">
               <IconCloud size={20} />
-              APIs used:{" "}
+              APIs Used:
               <a
                 href="https://aladhan.com/prayer-times-api"
                 target="_blank"

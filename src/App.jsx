@@ -7,6 +7,7 @@ import History from "./components/History";
 import  PrayersTime  from "./components/PrayersTime";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
+import Donation from "./components/Donation";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <History />
       <Gallery />
       <PrayersTime />
+      <Donation />
       <Footer />
     </MantineProvider>
   );
