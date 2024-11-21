@@ -1,0 +1,48 @@
+.footer {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px 0;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.icon-text {
+  display: flex;
+  gap: 10px;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.icon-text a {
+  text-decoration: none;
+  color: #4ecca3;
+}
+
+.google-map {
+  width: 100%;
+  height: 300px;
+  max-width: 600px; /* Restrict maximum width for larger screens */
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.google-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
