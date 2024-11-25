@@ -1,51 +1,41 @@
 .marquee-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: 100%; /* Take the full width */
+  overflow: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding in width */
 }
 
-.marquee-container h2 {
-  font-weight: 700;
-}
-
-.marquee-container .prayer-item {
-  margin: 0 20px;
-  overflow: hidden; /* Hide overflow to prevent scrollbars */
-  font-size: 1.4rem;
+.marquee-list {
+  width: 100%; /* Ensure marquee spans the full container width */
+  overflow-x: hidden; /* Hide overflow on x-axis */
+  white-space: nowrap; /* Prevent content wrapping */
   display: flex;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
+}
+
+.prayer-item {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 10px; /* Reduce margin for small screens */
+  white-space: nowrap;
 }
 
 .color-pulse-indicator {
-  color: white;
-  background-color: #1a1a2e; /* Navy background */
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 6px;
-  position: relative; /* For the ::after pseudo-element */
-  overflow: hidden; /* Hide the shine effect overflow */
+  display: inline-block;
+  padding: 8px;
+  margin: 0;
+  white-space: nowrap;
 }
 
-.color-pulse-indicator::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%; /* Start the shine off to the left */
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transform: skewX(-30deg);
-  animation: sheen 1.5s infinite;
-}
-
-@keyframes sheen {
-  0% {
-    transform: skewX(-30deg) translateX(-100%);
+@media (max-width: 768px) {
+  .prayer-item {
+    font-size: 1rem; /* Smaller font on mobile */
+    margin: 0 5px; /* Adjust margins for mobile */
   }
-  100% {
-    transform: skewX(-30deg) translateX(100%);
+
+  .marquee-container h2 {
+    font-size: 1rem; /* Smaller heading on mobile */
   }
 }

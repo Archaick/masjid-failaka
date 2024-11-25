@@ -8,34 +8,36 @@ const PrayersTime = () => {
   const [prayerTimes, setPrayerTimes] = useState(null);
   const [nextPrayer, setNextPrayer] = useState(null);
   const [countdown, setCountdown] = useState("");
-  const [showContent, setShowContent] = useState(false); // New state to control delayed mount
+  const [showContent, setShowContent] = useState(false);
 
-  // Show the component content after 2 seconds
+  // Delay content rendering by 2 seconds
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 2000); // 2-second delay
-
-    return () => clearTimeout(timer); // Cleanup the timer on unmount
+    const timer = setTimeout(() => setShowContent(true), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
-  // Get the current date in Jakarta timezone
+  // Get current time in Jakarta timezone
   const getJakartaNow = () => {
-    const now = new Date();
-    const utcOffset = now.getTimezoneOffset() * 60000; // Local timezone offset in ms
-    const jakartaOffset = 7 * 60 * 60000; // Jakarta is UTC+7
-    return new Date(now.getTime() + utcOffset + jakartaOffset);
+    return new Date(
+      new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jakarta" }).format(
+        new Date()
+      )
+    );
   };
 
+  // Fetch prayer times from the Aladhan API
   const fetchPrayerTimes = async (date) => {
     try {
-      const latitude = -6.2088; // Jakarta latitude
-      const longitude = 106.8456; // Jakarta longitude
-      const method = 20; // KEMENAG - Indonesia method
+      const params = {
+        latitude: -6.2088,
+        longitude: 106.8456,
+        method: 20, // KEMENAG - Indonesia
+        timezone: "Asia/Jakarta",
+      };
 
       const response = await axios.get(
         `https://api.aladhan.com/v1/timings/${date}`,
-        { params: { latitude, longitude, method } }
+        { params }
       );
 
       const timings = response.data.data.timings;
@@ -54,31 +56,33 @@ const PrayersTime = () => {
 
       setPrayerTimes(formattedTimings);
       findNextPrayer(formattedTimings);
-    } catch (err) {
-      console.error("Error retrieving prayer times:", err);
+    } catch (error) {
+      console.error("Error retrieving prayer times:", error);
     }
   };
 
+  // Convert prayer times to Jakarta timezone
   const convertToJakartaTime = (time) => {
     const [hour, minute] = time.split(":");
-    const jakartaTime = getJakartaNow();
-    jakartaTime.setHours(hour, minute, 0, 0);
-    return jakartaTime;
+    const jakartaDate = getJakartaNow();
+    jakartaDate.setHours(hour, minute, 0, 0);
+    return jakartaDate;
   };
 
+  // Determine the next prayer
   const findNextPrayer = (timings) => {
     const now = getJakartaNow();
     const next = Object.entries(timings).find(([_, time]) => time > now);
     if (next) {
       setNextPrayer({ name: next[0], time: next[1] });
     } else {
-      // If no next prayer found, assume the next Fajr of the following day
       const tomorrowFajr = new Date(timings.Fajr);
       tomorrowFajr.setDate(tomorrowFajr.getDate() + 1);
       setNextPrayer({ name: "Fajr", time: tomorrowFajr });
     }
   };
 
+  // Calculate countdown to the next prayer
   const calculateCountdown = () => {
     if (!nextPrayer) return;
     const now = getJakartaNow();
@@ -94,23 +98,34 @@ const PrayersTime = () => {
     setCountdown(`${hours}h ${minutes}m`);
   };
 
+  // Fetch prayer times on mount and update daily
   useEffect(() => {
     const today = getJakartaNow()
       .toLocaleDateString("en-GB")
       .replace(/\//g, "-"); // Format as DD-MM-YYYY
     fetchPrayerTimes(today);
+
+    const interval = setInterval(() => {
+      const newDate = getJakartaNow()
+        .toLocaleDateString("en-GB")
+        .replace(/\//g, "-");
+      fetchPrayerTimes(newDate);
+    }, 24 * 60 * 60 * 1000); // Update daily
+
+    return () => clearInterval(interval);
   }, []);
 
+  // Update countdown every minute
   useEffect(() => {
-    calculateCountdown(); // Initial countdown calculation
-    const interval = setInterval(calculateCountdown, 60000); // Update countdown every minute
+    calculateCountdown();
+    const interval = setInterval(calculateCountdown, 60000);
     return () => clearInterval(interval);
   }, [nextPrayer, prayerTimes]);
 
-  // Render a loader if showContent is still false
+  // Render a loader while the content is delayed
   if (!showContent) {
     return (
-      <Center style={{ height: '300px' }}>
+      <Center style={{ height: "300px" }}>
         <Loader size="lg" type="bars" color="#4ecca3" />
       </Center>
     );
@@ -125,7 +140,16 @@ const PrayersTime = () => {
       )}
       <Container mt={50} mb={200}>
         {prayerTimes ? (
-          <Marquee gradient={false} speed={80} className="marquee-list">
+          <Marquee
+            gradient={false}
+            speed={80}
+            className="marquee-list"
+            style={{
+              maxWidth: "100%",
+              whiteSpace: "nowrap",
+              overflowX: "hidden",
+            }}
+          >
             {Object.entries(prayerTimes).map(([prayer, time]) => (
               <span
                 key={prayer}
@@ -134,6 +158,7 @@ const PrayersTime = () => {
                     ? "color-pulse-indicator"
                     : ""
                 }`}
+                style={{ minWidth: "fit-content" }}
               >
                 {prayer} <br />
                 {time.toLocaleTimeString("en-US", {

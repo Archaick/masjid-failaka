@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="overlay"></div>
           <Carousel.Caption>
             <h3>Legacy of Giving</h3>
-            <p>contribute to the future of our mosque and community</p>
+            <p>Contribute to the future of our mosque and community</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

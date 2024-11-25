@@ -24,7 +24,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Aladhan
+                Aladhan.com
               </a>
             </p>
           </div>
