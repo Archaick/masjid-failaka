@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Loader, Container, Center, Text } from "@mantine/core";
 import "./PrayersTime.css";
-import Marquee from "react-fast-marquee";
+import PrayerMarquee from "./PrayerMarquee";
 
 const PrayersTime = () => {
   const [dates, setDates] = useState(null);
+  const [prayerTimes, setPrayerTimes] = useState(null)
 
   const fetchPrayerTimes = async () => {
     try {
@@ -23,9 +24,12 @@ const PrayersTime = () => {
       const { gregorian, hijri } = response.data.data.date;
       setDates({ gregorian: gregorian.date, hijri: hijri.date });
 
-      console.log("API Response:", response.data);
-      console.log("Date response:", response.data.data.date.gregorian.date);
-      console.log("Date response:", response.data.data.date.hijri.date);
+      const timings = response.data.data.timings
+      setPrayerTimes(timings)
+
+      // console.log("API Response:", response.data.data.timings);
+      // console.log("Date response:", response.data.data.date.gregorian.date);
+      // console.log("Date response:", response.data.data.date.hijri.date);
 
       // setPrayerTimes(response.data.data.timings);
     } catch (error) {
@@ -57,6 +61,8 @@ const PrayersTime = () => {
           <Loader color="blue" size="xl" type="bars" />
         </Center>
       )}
+
+      {prayerTimes && <PrayerMarquee prayerTimes={prayerTimes} />}
     </Container>
   );
 };
