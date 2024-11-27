@@ -1,12 +1,20 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import { Card, Text, Container, Center, Flex } from "@mantine/core";
+import { Card, Text, Container, Flex, Center } from "@mantine/core";
 
 const PrayerMarquee = ({ prayerTimes }) => {
+  const filteredPrayerTimes = Object.fromEntries(
+    Object.entries(prayerTimes).filter(([key]) =>
+      ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"].includes(key)
+    )
+  );
+
   const determineNextPrayer = () => {
     const currentTime = new Date();
-    for (const [prayerName, time] of Object.entries(prayerTimes)) {
+    // object.entries made prayerTimes into array-key values...
+    for (const [prayerName, time] of Object.entries(filteredPrayerTimes)) {
       const [hours, minutes] = time.split(":");
+      // filtering for 5 prayers only
       const prayerTime = new Date();
       prayerTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
       if (currentTime < prayerTime) {
@@ -19,10 +27,12 @@ const PrayerMarquee = ({ prayerTimes }) => {
 
   return (
     <Container mt={50} mb={80}>
-      <Flex direction={{ base: 'column', sm: 'column' }} >
-        <h3>Next prayer</h3>
+      <Flex direction={{ base: "column", sm: "column" }}>
+        <Center mb={20}>
+          <h3>Next Prayer '' in: </h3>
+        </Center>
         <Marquee gradient={false}>
-          {Object.entries(prayerTimes).map(([prayerName, time]) => (
+          {Object.entries(filteredPrayerTimes).map(([prayerName, time]) => (
             <Card
               key={prayerName}
               style={{
