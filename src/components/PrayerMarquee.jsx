@@ -3,7 +3,23 @@ import Marquee from "react-fast-marquee";
 import { Card, Text, Container, Flex, Center } from "@mantine/core";
 import "./PrayerMarquee.css";
 
+// Placeholder imports for background images
+import FajrImage from "../assets/prayers/fajr.jpg"
+import DhuhrImage from "../assets/prayers/dhuhr.jpg";
+import AsrImage from "../assets/prayers/asr.jpg";
+import MaghribImage from "../assets/prayers/maghrib.jpg";
+import IshaImage from "../assets/prayers/isha.jpg";
+
 const PrayerMarquee = ({ prayerTimes }) => {
+  // Mapping prayers to their specific background images
+  const prayerImages = {
+    Fajr: FajrImage,
+    Dhuhr: DhuhrImage,
+    Asr: AsrImage,
+    Maghrib: MaghribImage,
+    Isha: IshaImage,
+  };
+
   // Filtering for 5 prayers only
   const filteredPrayerTimes = Object.fromEntries(
     Object.entries(prayerTimes).filter(([key]) =>
@@ -27,7 +43,7 @@ const PrayerMarquee = ({ prayerTimes }) => {
       const prayerTime = new Date();
       prayerTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
       if (currentTime < prayerTime) {
-        return { name: prayerName, time: prayerTime }; // Return prayer name and time
+        return { name: prayerName, time: prayerTime };
       }
     }
     const fajrTime = filteredPrayerTimes["Fajr"];
@@ -35,7 +51,7 @@ const PrayerMarquee = ({ prayerTimes }) => {
       const [hours, minutes] = fajrTime.split(":");
       const prayerTime = new Date();
       prayerTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
-      prayerTime.setDate(prayerTime.getDate() + 1); // Assume Fajr is the next day if all others passed
+      prayerTime.setDate(prayerTime.getDate() + 1);
       return { name: "Fajr", time: prayerTime };
     }
     return null;
@@ -46,7 +62,6 @@ const PrayerMarquee = ({ prayerTimes }) => {
     nextPrayer ? calculateTimeRemaining(nextPrayer.time) : "Calculating..."
   );
 
-  // Update the next prayer and the countdown every second
   useEffect(() => {
     const timer = setInterval(() => {
       const updatedNextPrayer = determineNextPrayer();
@@ -56,7 +71,7 @@ const PrayerMarquee = ({ prayerTimes }) => {
       }
     }, 1000);
 
-    return () => clearInterval(timer); // Cleanup the timer on component unmount
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -73,10 +88,11 @@ const PrayerMarquee = ({ prayerTimes }) => {
             <Card
               key={prayerName}
               className={`prayer-card ${
-                prayerName === nextPrayer?.name
-                  ? "active-prayer"
-                  : "inactive-prayer"
+                prayerName === nextPrayer?.name ? "active-prayer" : "inactive-prayer"
               }`}
+              style={{
+                backgroundImage: `url(${prayerImages[prayerName]})`,
+              }}
             >
               <Text weight="bold">{prayerName}</Text>
               <Text>{time}</Text>

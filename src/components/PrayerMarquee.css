@@ -1,29 +1,31 @@
 .prayer-card {
   margin: 0 10px;
-  padding: 10px;
   border-radius: 8px;
   min-width: 120px;
-  text-align: center; /* Optional: Keeps text aligned nicely */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  text-align: center;
   width: 200px;
   aspect-ratio: 1;
-  --o:calc(50%*tan(-22.5deg));
+  --o: calc(50% * tan(-22.5deg));
   clip-path: polygon(
     var(--o) 50%,
     50% var(--o),
     calc(100% - var(--o)) 50%,
     50% calc(100% - var(--o))
   );
-  background: #3B8686;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white; /* Adjust text color for visibility */
 }
 
 .active-prayer {
-  background-color: #4ecca3;
-  color: #ffffff; /* Optional: Adjust text color for better contrast */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a highlight effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.inactive-prayer {
-  background-color: #ccc;
-  color: #333333; /* Optional: Adjust text color */
+.inactive-prayer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Shadow overlay */
+  z-index: 1;
 }
