@@ -64,21 +64,19 @@ const PrayerMarquee = ({ prayerTimes }) => {
       <Flex direction={{ base: "column", sm: "column" }}>
         <Center mb={20}>
           <h3>
-            Next <span style={{ color: "#4ecca3" }}>{nextPrayer?.name}</span> in{" "}
+            Next, <span style={{ color: "#4ecca3" }}>{nextPrayer?.name}</span>, in{" "}
             <span style={{ color: "#4ecca3" }}>{timeRemaining}</span>
           </h3>
         </Center>
-        <Marquee gradient={false}>
+        <Marquee gradient={true} gradientWidth={50}>
           {Object.entries(filteredPrayerTimes).map(([prayerName, time]) => (
             <Card
               key={prayerName}
-              style={{
-                backgroundColor: prayerName === nextPrayer?.name ? "#4ecca3" : "#ccc",
-                margin: "0 10px",
-                padding: "10px",
-                borderRadius: "8px",
-                minWidth: "120px",
-              }}
+              className={`prayer-card ${
+                prayerName === nextPrayer?.name
+                  ? "active-prayer"
+                  : "inactive-prayer"
+              }`}
             >
               <Text weight="bold">{prayerName}</Text>
               <Text>{time}</Text>
