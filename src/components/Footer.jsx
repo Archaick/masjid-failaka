@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Footer.css";
-import { IconCloud, IconMapPinFilled } from "@tabler/icons-react";
+import { IconCloud, IconMap2 } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
@@ -11,14 +11,16 @@ const Footer = () => {
           {/* Left Section */}
           <div className="col-md-6">
             <h5 className="footer-title">Masjid Failaka</h5>
-            <p className="icon-text">
-              <IconMapPinFilled size={20} stroke={2}/>
-              Jl. Palmerah Utara No.7 3 6, RT.3/RW.6, Palmerah, Kec. Palmerah,
-              Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11480
-            </p>
-            <p className="icon-text">
+            <div className="icon-text">
+              <IconMap2 size={20} stroke={2}/>
+              <span>
+                Jl. Palmerah Utara No.7 3 6, RT.3/RW.6, Palmerah, Kec. Palmerah,
+                Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11480
+              </span>
+            </div>
+            <div className="icon-text">
               <IconCloud size={20} />
-              APIs Used:
+              <span>APIs Used:</span>
               <a
                 href="https://aladhan.com/prayer-times-api"
                 target="_blank"
@@ -26,7 +28,7 @@ const Footer = () => {
               >
                 Aladhan.com
               </a>
-            </p>
+            </div>
           </div>
 
           {/* Right Section */}
