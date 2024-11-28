@@ -23,21 +23,21 @@ const History = () => {
         className="history-tabs"
       >
         <Tabs.List>
-          <Tabs.Tab value="founder">
+          <Tabs.Tab value="founder" className="history-tab">
             <IconUser />
-            The Founder
+            <span className="tab-text">The Founder</span>
           </Tabs.Tab>
-          <Tabs.Tab value="milestones">
+          <Tabs.Tab value="milestones" className="history-tab">
             <IconTimeline />
-            Key Milestones
+            <span className="tab-text">Key Milestones</span>
           </Tabs.Tab>
-          <Tabs.Tab value="gallery">
+          <Tabs.Tab value="gallery" className="history-tab">
             <IconPhoto />
-            Gallery
+            <span className="tab-text">Gallery</span>
           </Tabs.Tab>
-          <Tabs.Tab value="future">
+          <Tabs.Tab value="future" className="history-tab">
             <IconArrowUp />
-            Looking Ahead
+            <span className="tab-text">Looking Ahead</span>
           </Tabs.Tab>
         </Tabs.List>
 
@@ -57,16 +57,14 @@ const History = () => {
             <Text className="tab-content">
               <ul>
                 <li>
-                  Hosts daily prayers, Quran study sessions, and religious
-                  events.
+                  Hosts daily prayers, Quran study sessions, and religious events.
                 </li>
                 <li>
-                  Offers youth and educational programs for personal and
-                  spiritual growth.
+                  Offers youth and educational programs for personal and spiritual
+                  growth.
                 </li>
                 <li>
-                  In 2020, celebrated two decades of serving the Palemrah
-                  community.
+                  In 2020, celebrated two decades of serving the Palemrah community.
                 </li>
               </ul>
             </Text>
@@ -86,8 +84,7 @@ const History = () => {
           <Tabs.Panel value="future">
             <Text className="tab-content">
               Our future focus is on serving the Palemrah community by expanding
-              youth programs, improving facilities, and nurturing unity and
-              faith.
+              youth programs, improving facilities, and nurturing unity and faith.
             </Text>
           </Tabs.Panel>
         </Center>
