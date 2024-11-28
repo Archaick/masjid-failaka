@@ -6,6 +6,7 @@
   min-height: 450px;
   text-align: center;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .history-title {
@@ -22,5 +23,5 @@
 }
 
 .tab-content {
-    padding-left: 12px;
+  padding-left: 12px;
 }
