@@ -4,7 +4,7 @@ import { Card, Text, Container, Flex, Center } from "@mantine/core";
 import "./PrayerMarquee.css";
 
 // Placeholder imports for background images
-import FajrImage from "../assets/prayers/fajr.jpg"
+import FajrImage from "../assets/prayers/fajr.jpg";
 import DhuhrImage from "../assets/prayers/dhuhr.jpg";
 import AsrImage from "../assets/prayers/asr.jpg";
 import MaghribImage from "../assets/prayers/maghrib.jpg";
@@ -79,8 +79,13 @@ const PrayerMarquee = ({ prayerTimes }) => {
       <Flex direction={{ base: "column", sm: "column" }}>
         <Center mb={20}>
           <h3>
-            Next, <span style={{ color: "#4ecca3" }}>{nextPrayer?.name}</span>, in{" "}
-            <span style={{ color: "#4ecca3" }}>{timeRemaining}</span>
+            <span style={{ color: "#393e46", fontWeight: "700" }}>
+              {nextPrayer?.name}
+            </span>
+            <span> in </span>
+            <span style={{ color: "#393e46", fontWeight: "700" }}>
+              {timeRemaining}
+            </span>
           </h3>
         </Center>
         <Marquee gradient={true} gradientWidth={50}>
@@ -88,14 +93,18 @@ const PrayerMarquee = ({ prayerTimes }) => {
             <Card
               key={prayerName}
               className={`prayer-card ${
-                prayerName === nextPrayer?.name ? "active-prayer" : "inactive-prayer"
+                prayerName === nextPrayer?.name
+                  ? "active-prayer"
+                  : "inactive-prayer"
               }`}
               style={{
                 backgroundImage: `url(${prayerImages[prayerName]})`,
               }}
             >
-              <Text weight="bold">{prayerName}</Text>
-              <Text>{time}</Text>
+              <div className="text-container">
+                <Text className="prayer-name">{prayerName}</Text>
+                <Text className="prayer-time">{time}</Text>
+              </div>
             </Card>
           ))}
         </Marquee>

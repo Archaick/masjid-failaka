@@ -61,7 +61,7 @@ const PrayersTime = () => {
           <Loader color="blue" size="xl" type="bars" />
         </Center>
       )}
-
+      
       {prayerTimes && <PrayerMarquee prayerTimes={prayerTimes} />}
     </Container>
   );
