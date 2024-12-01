@@ -72,7 +72,7 @@ const PrayerMarquee = ({ prayerTimes }) => {
   }, []);
 
   return (
-    <Container className="marquee-container">
+    <Container className="marquee-container" mt={30} mb={30}>
       <Flex direction="column">
         <Center>
           <h3>
