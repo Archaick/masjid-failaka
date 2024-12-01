@@ -1,55 +1,36 @@
+/* Marquee Container */
+.marquee-container {
+  overflow: hidden; /* Prevent both vertical and horizontal overflow */
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+/* Prayer Card Styling */
 .prayer-card {
-  margin: 0 10px;
-  border-radius: 8px;
-  min-width: 120px;
   text-align: center;
-  width: 200px;
-  aspect-ratio: 1;
-  --o: calc(50% * tan(-22.5deg));
-  clip-path: polygon(
-    var(--o) 50%,
-    50% var(--o),
-    calc(100% - var(--o)) 50%,
-    50% calc(100% - var(--o))
-  );
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  font-weight: 800;
-  font-size: 1.1rem;
-  overflow: hidden; /* Prevents overflow for the effect */
+  width: 160px; /* Responsive width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  margin: 0 10px; /* Ensure consistent spacing */
+  background-color: #f7f9fb;
+  border: 2px solid #d9dee2;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.prayer-card .text-container {
-  position: relative;
-  z-index: 2; /* Ensure text is always above the overlay */
-  text-align: center;
-  padding: 10px;
+/* Active Prayer */
+.active-prayer {
+  background-color: #e9f5f1;
+  border-color: #4ecca3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(78, 204, 163, 0.6);
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
-.active-prayer .prayer-name {
-  font-weight: bold;
-  color: white;
-  animation: pulse 2s infinite ease-in-out; /* Pulsing effect */
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8),
-    0px 0px 10px rgba(0, 0, 0, 0.6); /* Subtle glow and depth */
-}
-
-.active-prayer .prayer-time {
-  font-weight: 700;
-  color: white;
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8),
-    0px 0px 10px rgba(0, 0, 0, 0.6); /* Subtle glow and depth */
-}
-
-.inactive-prayer .prayer-name,
-.inactive-prayer .prayer-time {
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8); /* Subtle appearance for inactive prayers */
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8); /* Helps text pop on the background */
-}
-
-/* Pulse animation for the active prayer text */
+/* Pulse Animation */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -60,4 +41,36 @@
   100% {
     transform: scale(1);
   }
+}
+
+/* Text Styles */
+.prayer-card .text-container {
+  margin-top: 10px;
+}
+
+.prayer-card .prayer-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #393e46;
+}
+
+.prayer-card .prayer-time {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.icon {
+  color: #9ca3af;
+}
+
+/* Next Prayer Styles */
+.next-prayer-name {
+  color: #393e46;
+  font-weight: 700;
+}
+
+.time-remaining {
+  color: #4ecca3;
+  font-weight: 700;
 }

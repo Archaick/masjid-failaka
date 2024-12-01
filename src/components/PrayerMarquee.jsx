@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import { Card, Text, Container, Flex, Center } from "@mantine/core";
-import "./PrayerMarquee.css";
-
-// Placeholder imports for background images
-import FajrImage from "../assets/prayers/fajr.jpg";
-import DhuhrImage from "../assets/prayers/dhuhr.jpg";
-import AsrImage from "../assets/prayers/asr.jpg";
-import MaghribImage from "../assets/prayers/maghrib.jpg";
-import IshaImage from "../assets/prayers/isha.jpg";
+import {
+  IconSunrise,
+  IconSun,
+  IconSunset,
+  IconMoonStars,
+  IconMoon,
+} from "@tabler/icons-react";
 
 const PrayerMarquee = ({ prayerTimes }) => {
-  // Mapping prayers to their specific background images
-  const prayerImages = {
-    Fajr: FajrImage,
-    Dhuhr: DhuhrImage,
-    Asr: AsrImage,
-    Maghrib: MaghribImage,
-    Isha: IshaImage,
+  const prayerIcons = {
+    Fajr: <IconSunrise size={40} />,
+    Dhuhr: <IconSun size={40} />,
+    Asr: <IconSunset size={40} />,
+    Maghrib: <IconMoonStars size={40} />,
+    Isha: <IconMoon size={40} />,
   };
 
-  // Filtering for 5 prayers only
   const filteredPrayerTimes = Object.fromEntries(
     Object.entries(prayerTimes).filter(([key]) =>
       ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"].includes(key)
@@ -75,32 +72,26 @@ const PrayerMarquee = ({ prayerTimes }) => {
   }, []);
 
   return (
-    <Container mt={50} mb={80}>
-      <Flex direction={{ base: "column", sm: "column" }}>
-        <Center mb={20}>
+    <Container className="marquee-container">
+      <Flex direction="column">
+        <Center>
           <h3>
-            <span style={{ color: "#393e46", fontWeight: "700" }}>
-              {nextPrayer?.name}
-            </span>
+            <span className="next-prayer-name">{nextPrayer?.name}</span>
             <span> in </span>
-            <span style={{ color: "#393e46", fontWeight: "700" }}>
-              {timeRemaining}
-            </span>
+            <span className="time-remaining">{timeRemaining}</span>
           </h3>
         </Center>
-        <Marquee gradient={true} gradientWidth={50}>
+        <Marquee gradient={false} speed={50}>
           {Object.entries(filteredPrayerTimes).map(([prayerName, time]) => (
             <Card
               key={prayerName}
               className={`prayer-card ${
-                prayerName === nextPrayer?.name
-                  ? "active-prayer"
-                  : "inactive-prayer"
+                prayerName === nextPrayer?.name ? "active-prayer" : ""
               }`}
-              style={{
-                backgroundImage: `url(${prayerImages[prayerName]})`,
-              }}
             >
+              <Center>
+                <div className="icon">{prayerIcons[prayerName]}</div>
+              </Center>
               <div className="text-container">
                 <Text className="prayer-name">{prayerName}</Text>
                 <Text className="prayer-time">{time}</Text>

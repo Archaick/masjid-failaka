@@ -8,6 +8,7 @@ const PrayersTime = () => {
   const [dates, setDates] = useState(null);
   const [prayerTimes, setPrayerTimes] = useState(null)
 
+
   const fetchPrayerTimes = async () => {
     try {
       const response = await axios.get(
@@ -25,8 +26,10 @@ const PrayersTime = () => {
       setDates({ gregorian: gregorian.date, hijri: hijri.date });
 
       const timings = response.data.data.timings
+      const hijriMonth = response.data.data.date.gregorian.month
       setPrayerTimes(timings)
-
+      // console.log(response.data.data.date.gregorian.month)
+      console.log(response.data.data.date.hijri.month)
       // console.log("API Response:", response.data.data.timings);
       // console.log("Date response:", response.data.data.date.gregorian.date);
       // console.log("Date response:", response.data.data.date.hijri.date);
@@ -61,7 +64,6 @@ const PrayersTime = () => {
           <Loader color="blue" size="xl" type="bars" />
         </Center>
       )}
-      
       {prayerTimes && <PrayerMarquee prayerTimes={prayerTimes} />}
     </Container>
   );
