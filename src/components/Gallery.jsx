@@ -1,9 +1,6 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./Gallery.css";
+import React, { useRef } from "react";
+import { Carousel } from "@mantine/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import exterior from "../assets/gallery/exterior.png";
 import lecture from "../assets/gallery/lecture.jpg";
 import orphanage from "../assets/gallery/orphanage.png";
@@ -33,30 +30,64 @@ const images = [
 ];
 
 const Gallery = () => {
-  return (
-    <Container>
-      <h2 className="gallery-title">Building Faith, Community, and Memories</h2>
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
 
-      <Row className="g-4">
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
+        Building Faith, Community, and Memories
+      </h2>
+
+      <Carousel
+        withIndicators
+        height={400}
+        slideSize="70%"
+        slideGap="sm"
+        controlsOffset="xl"
+        controlSize={27}
+        loop
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
+      >
         {images.map((image, index) => (
-          <Col lg={6} xs={12} key={index}>
-            <div className="grid-item">
-              <div className="image-container">
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="gallery-image"
-                />
-                <div className="gallery-overlay">
-                  <div className="overlay-title">{image.title}</div>
-                  <div className="overlay-description">{image.description}</div>
-                </div>
+          <Carousel.Slide key={index}>
+            <div style={{ position: "relative", height: "100%" }}>
+              {/* Image */}
+              <img
+                src={image.src}
+                alt={image.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
+
+              {/* Overlay */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  width: "100%",
+                  background: "rgba(0, 0, 0, 0.6)", // Semi-transparent black overlay
+                  color: "white",
+                  padding: "15px",
+                  borderRadius: "0 0 8px 8px",
+                }}
+              >
+                <h3 style={{ margin: "0 0 5px", fontSize: "1.2rem" }}>
+                  {image.title}
+                </h3>
+                <p style={{ margin: 0, fontSize: "0.95rem" }}>{image.description}</p>
               </div>
             </div>
-          </Col>
+          </Carousel.Slide>
         ))}
-      </Row>
-    </Container>
+      </Carousel>
+    </div>
   );
 };
 
