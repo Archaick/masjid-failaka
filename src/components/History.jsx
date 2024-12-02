@@ -17,7 +17,7 @@ const History = () => {
       </Title>
 
       <Tabs
-        color="#4ecca3"
+        color="#fbbf10"
         defaultValue="founder"
         orientation="vertical"
         className="history-tabs"

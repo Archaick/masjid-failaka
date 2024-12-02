@@ -1,9 +1,10 @@
-/* Main navbar container */
+/* #fbbf10 */
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1a1a2e; /* Dark navy background */
+  background-color: #f9f9f9; /* Dark navy background */
   color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0 20px; /* Padding on left and right */
@@ -13,7 +14,7 @@
 .navbar h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #f8f8f8;
+  color: #0c0c0c;
   margin-left: 5%;
   flex-grow: 1; /* Allow title to take up available space */
 }
@@ -30,7 +31,7 @@
 }
 
 .navbar .mantine-Group-root a {
-  color: #f0f0f0;
+  color: #0c0c0c;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s;
@@ -38,12 +39,12 @@
 }
 
 .navbar .mantine-Group-root a:hover {
-  color: #4ecca3;
+  color: #fbbf10;
 }
 
 /* Full Drawer Background and Anchor Styling */
 .mantine-Drawer-content {
-  background-color: #1a1a2e !important;
+  background-color: #f9f9f9 !important;
 }
 
 .drawer {
@@ -56,14 +57,14 @@
 
 /* Drawer Title Styling */
 .mantine-Drawer-title {
-  color: #ffffff;
+  color: #0c0c0c;
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 /* Drawer Anchor Links */
 .drawer a {
-  color: #ffffff;
+  color: #0c0c0c;
   font-size: 1rem;
   font-weight: 500;
   padding: 10px 0;
@@ -72,6 +73,6 @@
 }
 
 .drawer a:hover {
-  color: #4ecca3; /* Accent color on hover */
+  color: #fbbf10; /* Accent color on hover */
   text-decoration: none; /* Remove underline */
 }

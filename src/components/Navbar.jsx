@@ -18,7 +18,7 @@ const Navbar = () => {
           <Burger
             lineSize={3}
             size="md"
-            color="#ffffff"
+            color="#0c0c0c"
             opened={opened}
             onClick={toggle}
             aria-label="Toggle navigation"
@@ -32,7 +32,7 @@ const Navbar = () => {
             overlayOpacity={{ backgroundOpacity: 0.5, blur: 4 }}
             transition="slide-right"
             styles={{
-              drawer: { backgroundColor: '#1a1a2e', color: '#ffffff' },
+              drawer: { backgroundColor: '#1a1a2e', color: '#0c0c0c' },
               header: { backgroundColor: '#1a1a2e' },
               closeButton: { color: '#ffffff' },
               title: { color: '#ffffff', fontSize: '1.25rem' }
