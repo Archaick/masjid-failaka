@@ -5,6 +5,7 @@ import exterior from "../assets/gallery/exterior.png";
 import lecture from "../assets/gallery/lecture.jpg";
 import orphanage from "../assets/gallery/orphanage.png";
 import activities from "../assets/gallery/activities.png";
+import "./Gallery.css";
 
 const images = [
   {
@@ -33,13 +34,13 @@ const Gallery = () => {
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "30px", fontWeight: "700" }}>
+    <div className="gallery-container">
+      <h2 className="gallery-title">
         Building Faith, Community, and Memories
       </h2>
 
       <Carousel
-        withIndicators
+        // withIndicators
         height={400}
         slideSize="70%"
         slideGap="sm"
@@ -50,37 +51,18 @@ const Gallery = () => {
       >
         {images.map((image, index) => (
           <Carousel.Slide key={index}>
-            <div style={{ position: "relative", height: "100%" }}>
+            <div className="carousel-slide">
               {/* Image */}
               <img
                 src={image.src}
                 alt={image.title}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                }}
+                className="carousel-image"
               />
 
               {/* Overlay */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  background: "rgba(255, 170, 0, 0.7)", // Softer yellow with less brightness
-                  color: "white",
-                  padding: "15px",
-                  borderRadius: "0 0 8px 8px",
-                  boxShadow: "0px 4px 8px rgba(255, 170, 0, 0.4)", // Softer yellow shadow
-                }}
-              >
-                <h3 style={{ margin: "0 0 5px", fontSize: "1.2rem" }}>
-                  {image.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: "0.95rem" }}>{image.description}</p>
+              <div className="carousel-overlay">
+                <h3>{image.title}</h3>
+                <p>{image.description}</p>
               </div>
             </div>
           </Carousel.Slide>
