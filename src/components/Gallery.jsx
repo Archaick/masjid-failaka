@@ -30,11 +30,11 @@ const images = [
 ];
 
 const Gallery = () => {
-  const autoplay = useRef(Autoplay({ delay: 5000 }));
+  const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
+      <h2 style={{ textAlign: "center", marginBottom: "30px", fontWeight: "700" }}>
         Building Faith, Community, and Memories
       </h2>
 
@@ -47,8 +47,6 @@ const Gallery = () => {
         controlSize={27}
         loop
         plugins={[autoplay.current]}
-        onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}
       >
         {images.map((image, index) => (
           <Carousel.Slide key={index}>
@@ -72,10 +70,11 @@ const Gallery = () => {
                   bottom: 0,
                   left: 0,
                   width: "100%",
-                  background: "rgba(0, 0, 0, 0.6)", // Semi-transparent black overlay
+                  background: "rgba(255, 170, 0, 0.7)", // Softer yellow with less brightness
                   color: "white",
                   padding: "15px",
                   borderRadius: "0 0 8px 8px",
+                  boxShadow: "0px 4px 8px rgba(255, 170, 0, 0.4)", // Softer yellow shadow
                 }}
               >
                 <h3 style={{ margin: "0 0 5px", fontSize: "1.2rem" }}>
