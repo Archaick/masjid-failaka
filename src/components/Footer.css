@@ -1,24 +1,26 @@
+/* Footer */
 .footer {
-  background-color: #f8f9fa; /* Light grey background */
-  padding: 50px 0;
+  background-color: #f8f9fa; /* Light gray background */
+  padding-bottom: 50px;
 }
 
 .footer-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #1a1a2e; /* Dark navy for better contrast */
 }
 
 .icon-text {
   display: flex;
   gap: 10px;
-  color: #495057;
+  color: #495057; /* Muted gray text */
   font-size: 1rem;
 }
 
 .icon-text a {
   text-decoration: none;
-  color: #1a1a2e;
+  color: #ffc107; /* Accent green for links */
 }
 
 .icon-fix {
@@ -41,10 +43,11 @@
   border: none;
 }
 
-/* Sub-footer styling */
+/* Sub-footer */
 .sub-footer {
-  background-color: #e9ecef; /* Slightly darker grey */
+  background-color: #e9ecef; /* Slightly darker gray */
   padding: 10px 0;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -54,7 +57,7 @@
   justify-content: center;
   gap: 8px;
   font-size: 0.9rem;
-  color: #6c757d;
+  color: #6c757d; /* Muted text */
 }
 
 .copyright-icon {
@@ -62,6 +65,39 @@
   vertical-align: middle;
 }
 
+/* Sub-footer Yellow Styling */
+.sub-footer-yellow {
+  background-color: #ffc107; /* Softer and warmer yellow */
+  text-align: center;
+  padding: 10px 0;
+  color: #1a1a2e; /* Dark navy for contrast */
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+}
+
+/* Day Display */
+.day-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #1a1a2e; /* Dark navy text */
+  font-weight: bold;
+}
+
+.gregorian-day,
+.hijri-day {
+  color: #1a1a2e; /* Ensure readability */
+}
+
+.separator {
+  color: #ffc107; /* Accent green separator */
+  font-size: 1.2rem;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .footer {
     text-align: center;
@@ -69,5 +105,14 @@
 
   .col-md-6 {
     margin-bottom: 20px;
+  }
+
+  .day-display {
+    font-size: 0.9rem;
+  }
+
+  .sub-footer-yellow {
+    font-size: 0.85rem;
+    padding: 8px 0;
   }
 }

@@ -2,11 +2,25 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Footer.css";
 import { IconCloud, IconMapPin, IconCopyright } from "@tabler/icons-react";
+import moment from "moment-hijri"; // Hijri date library
 
 const Footer = () => {
+  const currentGregorianDay = moment().format("dddd, MMMM");
+  const currentHijriDay = moment().format("dddd, iMMMM");
+
   return (
     <>
       <footer className="footer">
+        <div className="sub-footer">
+          <div className="container">
+            <div className="day-display">
+              <span className="gregorian-day">{currentGregorianDay}</span>
+              <span className="separator"> | </span>
+              <span className="hijri-day">{currentHijriDay}</span>
+            </div>
+          </div>
+        </div>
+
         <div className="container">
           <div className="row align-items-center">
             {/* Left Section */}
@@ -47,7 +61,8 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="sub-footer">
+
+      <div className="sub-footer-yellow">
         <div className="container">
           <div className="sub-footer-content">
             <IconCopyright size={16} className="copyright-icon" />
