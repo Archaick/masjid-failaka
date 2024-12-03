@@ -33,3 +33,23 @@
 .paypal-button-form {
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .donation-header {
+    font-size: 2rem; 
+  }
+
+  .donation-banner {
+    height: 500px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .donation-header {
+    font-size: 1.5rem; 
+  }
+
+  .donation-banner {
+    height: 400px; 
+  }
+}

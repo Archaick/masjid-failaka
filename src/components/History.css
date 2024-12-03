@@ -11,6 +11,7 @@
 
 .history-title {
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 .history-tabs {
@@ -32,13 +33,48 @@
 
 .tab-content {
   color: rgba(0, 0, 0, 0.85); /* Slightly lighter black */
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-  .tab-content {
-    font-size: 0.85rem; /* Slightly smaller font size */
+  .history-title {
+    font-size: 1.5rem; 
   }
 
-  /* .history-tab {
-  } */
+  .tab-content {
+    font-size: 0.9rem; 
+  }
+
+  .history-tabs {
+    max-width: 100%; 
+  }
+
+  .history-tab .tab-text {
+    font-size: 0.9rem; /* Adjust tab text size */
+  }
+}
+
+@media (max-width: 480px) {
+  .history-container {
+    padding: 5px; 
+  }
+
+  .history-title {
+    font-size: 1.2rem; 
+  }
+
+  .tab-content {
+    font-size: 0.8rem;
+  }
+
+  .history-tab {
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 10px; 
+  }
+
+  .history-tab .tab-text {
+    margin-top: 4px;
+    font-size: 0.8rem; 
+  }
 }

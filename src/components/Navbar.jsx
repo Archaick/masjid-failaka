@@ -27,7 +27,7 @@ const Navbar = () => {
             opened={opened}
             onClose={close}
             padding="lg"
-            title="Navigation"
+            title="Masjid Failaka"
             position="right"
             overlayOpacity={{ backgroundOpacity: 0.5, blur: 4 }}
             transition="slide-right"
