@@ -1,76 +1,34 @@
-/* Marquee Container */
-.marquee-container {
-  overflow: hidden; /* Prevent both vertical and horizontal overflow */
-  padding: 0;
-  margin: 0;
-  background-color: #ffffff;
+/* Active Prayer Icon Glow */
+.active-prayer .icon {
+  position: relative; /* Establish a positioning context */
+  color: rgb(255, 255, 255);
+  z-index: 1; /* Ensure the icon is above the pseudo-element */
 }
 
-/* Prayer Card Styling */
-.prayer-card {
-  text-align: center;
-  width: 160px; /* Responsive width */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-  margin: 0 10px; /* Ensure consistent spacing */
-  background-color: #f7f9fb;
-  border: 2px solid #d9dee2;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+/* Create a glowing pseudo-element */
+.active-prayer .icon::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Align the center vertically */
+  left: 50%; /* Align the center horizontally */
+  transform: translate(-50%, -50%); /* Center the pseudo-element */
+  width: 120%; /* Size relative to the icon */
+  height: 120%; /* Maintain circular shape */
+  border-radius: 50%; /* Circular glow */
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), rgba(255, 140, 0, 0.2));
+  animation: glow-pulse 2s infinite ease-in-out; /* Glowing effect */
+  z-index: -1; /* Keep the glow behind the icon */
 }
 
-/* Active Prayer */
-.active-prayer {
-  background-color: #e9f5f1;
-  border-color: #4ecca3;
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(78, 204, 163, 0.6);
-  animation: pulse 1.5s infinite ease-in-out;
-}
-
-/* Pulse Animation */
-@keyframes pulse {
+/* Glow Animation */
+@keyframes glow-pulse {
   0% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1); /* Centered */
   }
   50% {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.2); /* Centered and expanded */
   }
   100% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1); /* Centered */
   }
-}
-
-/* Text Styles */
-.prayer-card .text-container {
-  margin-top: 10px;
-}
-
-.prayer-card .prayer-name {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #393e46;
-}
-
-.prayer-card .prayer-time {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #9ca3af;
-}
-
-.icon {
-  color: #9ca3af;
-}
-
-/* Next Prayer Styles */
-.next-prayer-name {
-  color: #393e46;
-  font-weight: 700;
-}
-
-.time-remaining {
-  color: #4ecca3;
-  font-weight: 700;
 }

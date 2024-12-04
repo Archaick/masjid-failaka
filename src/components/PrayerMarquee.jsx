@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// https://www.npmjs.com/package/react-fast-marquee
 import Marquee from "react-fast-marquee";
 import { Card, Text, Container, Flex, Center } from "@mantine/core";
 import {
@@ -8,6 +9,7 @@ import {
   IconMoonStars,
   IconMoon,
 } from "@tabler/icons-react";
+import "./PrayerMarquee.css";
 
 const PrayerMarquee = ({ prayerTimes }) => {
   const prayerIcons = {
@@ -81,7 +83,7 @@ const PrayerMarquee = ({ prayerTimes }) => {
             <span className="time-remaining">{timeRemaining}</span>
           </h3>
         </Center>
-        <Marquee gradient={false} speed={50}>
+        <Marquee gradient={true} speed={80} >
           {Object.entries(filteredPrayerTimes).map(([prayerName, time]) => (
             <Card
               key={prayerName}
