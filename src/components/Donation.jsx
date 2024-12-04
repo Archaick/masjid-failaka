@@ -12,8 +12,9 @@ const Donation = () => {
       />
       <Container className="donation-content">
         <Title className="donation-header" align="center">
-          Be a Part of Something Greater
+          Be a Part of Something Greater<span className="test">Don't Click</span><span>⚠️</span>
         </Title>
+
         <Text align="center" color="#fff" mt="sm">
           Your generosity makes a real difference. Join hands to support our
           Masjid and community.
