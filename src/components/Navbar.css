@@ -1,5 +1,22 @@
 /* #fbbf10 */
+.test {
+  display: inline-block;
+  color: #FABC3F; /* Green highlight */
+  animation: hanging 2s infinite;
+}
 
+@keyframes hanging {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
 .navbar {
   display: flex;
   align-items: center;

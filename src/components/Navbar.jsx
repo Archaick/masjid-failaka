@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Text component="h1" size="xl" weight={700} color="white">
-        Masjid Failaka
+        Masjid Failaka <span className="test">[Test]</span>
       </Text>
 
       {isSmallScreen ? (
