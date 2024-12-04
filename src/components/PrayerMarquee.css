@@ -15,7 +15,7 @@
   width: 120%; /* Size relative to the icon */
   height: 120%; /* Maintain circular shape */
   border-radius: 50%; /* Circular glow */
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), rgba(255, 140, 0, 0.2));
+  background: radial-gradient(circle, rgba(255, 217, 0, 0.859), rgba(255, 140, 0, 0.2));
   animation: glow-pulse 2s infinite ease-in-out; /* Glowing effect */
   z-index: -1; /* Keep the glow behind the icon */
 }
@@ -26,9 +26,13 @@
     transform: translate(-50%, -50%) scale(1); /* Centered */
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.2); /* Centered and expanded */
+    transform: translate(-50%, -50%) scale(1.15); /* Centered and expanded */
   }
   100% {
     transform: translate(-50%, -50%) scale(1); /* Centered */
   }
+}
+
+.text-container {
+  text-align: center;
 }
