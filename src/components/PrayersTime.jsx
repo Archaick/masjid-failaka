@@ -28,13 +28,10 @@ const PrayersTime = () => {
       const timings = response.data.data.timings
       const hijriMonth = response.data.data.date.gregorian.month
       setPrayerTimes(timings)
-      // console.log(response.data.data.date.gregorian.month)
-      console.log(response.data.data.date.hijri.month)
-      // console.log("API Response:", response.data.data.timings);
-      // console.log("Date response:", response.data.data.date.gregorian.date);
-      // console.log("Date response:", response.data.data.date.hijri.date);
 
-      // setPrayerTimes(response.data.data.timings);
+      // console response
+      // console.log(response.data.data.date.hijri.month)
+
     } catch (error) {
       console.log("Error fetching prayer times:", error);
     }
