@@ -1,3 +1,17 @@
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Take the full width */
+  overflow: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.marquee-container h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
 /* Active Prayer Icon Glow */
 .active-prayer .icon {
   position: relative; /* Establish a positioning context */

@@ -44,7 +44,7 @@ const PrayersTime = () => {
   return (
     <Container mt={50} mb={50} size="xs">
       <Center>
-        <h2>Prayers Time in Jakarta</h2>
+        <h2 className="prayers-time-title">Prayers Time in Jakarta</h2>
       </Center>
 
       {dates ? (
