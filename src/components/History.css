@@ -87,6 +87,10 @@
     font-size: 0.9rem;
   }
 
+  .history-title {
+    font-size: 1.6rem;
+  }
+
   .history-tabs {
     max-width: 100%;
   }

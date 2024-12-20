@@ -9,13 +9,13 @@ import "./Gallery.css";
 
 const images = [
   {
-    title: "Outskirts of our masjid",
+    title: "Masjid's Grounds",
     description: "A boundary between urban life and spiritual peace",
     src: exterior,
   },
   {
-    title: "Instructor with Students",
-    description: "An instructor giving a lecture to students in the masjid",
+    title: "Vibrant Lessons",
+    description: "Students engaged with an instructor in the masjid",
     src: lecture,
   },
   {
@@ -25,7 +25,7 @@ const images = [
   },
   {
     title: "Children's Event",
-    description: "A fun and educational event for children",
+    description: "Fun and educational activities for children",
     src: activities,
   },
 ];
@@ -35,9 +35,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery-container">
-      <h2 className="gallery-title">
-        Building Faith, Community, and Memories
-      </h2>
+      <h2 className="gallery-title">Building Faith, Community, and Memories</h2>
 
       <Carousel
         // withIndicators

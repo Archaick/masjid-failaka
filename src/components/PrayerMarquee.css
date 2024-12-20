@@ -50,3 +50,9 @@
 .text-container {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .marquee-container h3 {
+    font-size: 1.6rem;
+  }
+}
