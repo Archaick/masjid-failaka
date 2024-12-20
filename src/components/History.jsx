@@ -10,7 +10,7 @@ import {
 
 const History = () => {
   return (
-    <Box className="history-container">
+    <Box className="history-container" id="about">
       {/* Header */}
       <Title order={2} className="history-title">
         Our History

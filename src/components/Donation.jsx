@@ -4,7 +4,7 @@ import "./Donation.css";
 
 const Donation = () => {
   return (
-    <div className="donation-banner">
+    <div className="donation-banner" id="support">
       <Overlay
         gradient="linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3))"
         opacity={0.9}

@@ -40,7 +40,7 @@ const Navbar = () => {
             }}
           >
             <div className="drawer">
-              <Anchor href="#about-us" onClick={close}>
+              <Anchor href="#about" onClick={close}>
                 About Us
               </Anchor>
               <Anchor href="#support" onClick={close}>
@@ -54,7 +54,7 @@ const Navbar = () => {
         </>
       ) : (
         <Group spacing="lg" gap="xl" className="nav-links">
-          <Anchor href="#about-us" size="md">
+          <Anchor href="#about" size="md">
             About Us
           </Anchor>
           <Anchor href="#support" size="md">

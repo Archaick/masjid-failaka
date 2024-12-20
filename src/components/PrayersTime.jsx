@@ -42,7 +42,7 @@ const PrayersTime = () => {
   }, []);
 
   return (
-    <Container mt={50} mb={50} size="xs">
+    <Container mt={50} mb={50} size="xs" id="prayers">
       <Center>
         <h2 className="prayers-time-title">Prayers Time in Jakarta</h2>
       </Center>
