@@ -13,7 +13,7 @@ const History = () => {
     <Box className="history-container" id="about">
       {/* Header */}
       <Title order={2} className="history-title">
-        Our History
+        What do we do?
       </Title>
 
       <Tabs
@@ -24,7 +24,7 @@ const History = () => {
       >
         <Tabs.List>
           <Tabs.Tab value="founder" className="history-tab">
-            <span className="tab-text">The Founder</span>
+            <span className="tab-text">Foundation</span>
           </Tabs.Tab>
           <Tabs.Tab value="milestones" className="history-tab">
             <span className="tab-text">Key Milestones</span>
@@ -43,9 +43,20 @@ const History = () => {
           <Tabs.Panel value="founder" className="tabs-panel">
             <IconUser className="tabs-icon" />
             <Text className="tab-content">
-              Founded in 2000 through a generous donation from Kuwaiti
-              philanthropist Fatima Jasim, Masjid Failaka is a center for
-              worship, learning, and community in Palemrah, Jakarta.
+              <ul>
+                <li>
+                  Founded in 2000 with a generous donation from Kuwaiti
+                  philanthropist Fatima Jasim.
+                </li>
+                <li>
+                  Serves as a hub for worship, education, and community
+                  activities.
+                </li>
+                <li>
+                  Located in Palemrah, Jakarta, fostering spiritual and social
+                  growth.
+                </li>
+              </ul>
             </Text>
           </Tabs.Panel>
         </Center>
@@ -70,8 +81,18 @@ const History = () => {
           <Tabs.Panel value="gallery" className="tabs-panel">
             <IconPhoto className="tabs-icon" />
             <Text className="tab-content">
-              Explore photos and videos of events, daily prayers, and moments
-              bringing the community together.
+              <ul>
+                <li>
+                  Explore a collection of photos and videos showcasing community
+                  events.
+                </li>
+                <li>
+                  Witness moments of daily prayers captured in vivid detail.
+                </li>
+                <li>
+                  Relive special occasions that bring the community closer.
+                </li>
+              </ul>
             </Text>
           </Tabs.Panel>
         </Center>
@@ -80,8 +101,19 @@ const History = () => {
           <Tabs.Panel value="future" className="tabs-panel">
             <IconArrowUp className="tabs-icon" />
             <Text className="tab-content">
-              Our future focus is on expanding youth programs, improving
-              facilities, and nurturing unity and faith.
+              <ul>
+                <li>
+                  Expanding youth programs to empower the younger generation.
+                </li>
+                <li>
+                  Work towards improving facilities to better serve the
+                  community.
+                </li>
+                <li>
+                  Prioritize nurturing unity and faith among members of the
+                  community.
+                </li>
+              </ul>
             </Text>
           </Tabs.Panel>
         </Center>
