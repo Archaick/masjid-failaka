@@ -12,7 +12,7 @@ const Donation = () => {
       />
       <Container className="donation-content">
         <Title className="donation-header" align="center">
-          Be a Part of Something Greater<span className="test">Don't Click</span><span>⚠️</span>
+          Be a Part of Something Greater{" "}<span className="test">Coming Soon</span>
         </Title>
 
         <Text align="center" color="#fff" mt="sm">
@@ -35,6 +35,8 @@ const Donation = () => {
             name="submit"
             title="PayPal - The safer, easier way to pay online!"
             alt="Donate Now"
+            // disable redirection
+            disabled
           />
         </form>
       </Container>

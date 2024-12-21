@@ -19,12 +19,12 @@ const images = [
     src: lecture,
   },
   {
-    title: "Orphanage Event",
+    title: "Orphanage Events",
     description: "A charity event organized for orphans",
     src: orphanage,
   },
   {
-    title: "Children's Event",
+    title: "Children's Activities",
     description: "Fun and educational activities for children",
     src: activities,
   },
